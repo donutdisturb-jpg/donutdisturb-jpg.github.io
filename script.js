@@ -18,6 +18,29 @@ if (menu && links) {
   });
 }
 
+// ========== ACTIVE NAVIGATION SCROLLSPY ==========
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.links a[href^="#"]');
+
+if (sections.length > 0 && navLinks.length > 0) {
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 120;
+      if (window.scrollY >= sectionTop) {
+        current = section.getAttribute('id');
+      }
+    });
+
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === `#${current}`) {
+        link.classList.add('active');
+      }
+    });
+  }, { passive: true });
+}
+
 // ========== BACK TO TOP BUTTON ==========
 const topButton = document.querySelector('.top');
 
@@ -35,10 +58,20 @@ if (topButton) {
 const yearEl = document.querySelector('#year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-// ========== AUDIO PLAYER LOGIC ==========
+// ========== AUDIO PLAYER & SCRUBBER LOGIC ==========
 const playBtn = document.getElementById('play-cello-btn');
 const celloAudio = document.getElementById('cello-audio');
 const waveArt = document.querySelector('.wave');
+const audioTrack = document.getElementById('audio-track');
+const audioBar = document.getElementById('audio-bar');
+const audioTime = document.getElementById('audio-time');
+
+function formatTime(secs) {
+  if (isNaN(secs)) return '0:00';
+  const m = Math.floor(secs / 60);
+  const s = Math.floor(secs % 60);
+  return `${m}:${s < 10 ? '0' : ''}${s}`;
+}
 
 if (playBtn && celloAudio) {
   playBtn.addEventListener('click', () => {
@@ -61,7 +94,56 @@ if (playBtn && celloAudio) {
     playBtn.innerHTML = '<span class="icon">▶</span> Listen to a Snippet';
     if (waveArt) waveArt.classList.remove('playing');
   });
+
+  if (audioBar && audioTime) {
+    celloAudio.addEventListener('timeupdate', () => {
+      const progress = (celloAudio.currentTime / celloAudio.duration) * 100;
+      audioBar.style.width = `${progress}%`;
+      audioTime.textContent = `${formatTime(celloAudio.currentTime)} / ${formatTime(celloAudio.duration)}`;
+    });
+
+    celloAudio.addEventListener('loadedmetadata', () => {
+      audioTime.textContent = `0:00 / ${formatTime(celloAudio.duration)}`;
+    });
+
+    if (audioTrack) {
+      audioTrack.addEventListener('click', (e) => {
+        const rect = audioTrack.getBoundingClientRect();
+        const clickX = e.clientX - rect.left;
+        const width = rect.width;
+        if (celloAudio.duration) {
+          celloAudio.currentTime = (clickX / width) * celloAudio.duration;
+        }
+      });
+    }
+  }
 }
+
+// ========== ONE-CLICK EMAIL COPY & TOAST NOTIFICATION ==========
+function showToast(message) {
+  const toast = document.getElementById('toast');
+  if (toast) {
+    toast.textContent = message;
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 3000);
+  }
+}
+
+document.querySelectorAll('.copy-email-link').forEach(link => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+    const email = 'donutdisturbq1@gmail.com';
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(email).then(() => {
+        showToast("✓ Copied email to clipboard!");
+      }).catch(() => {
+        showToast("Email: " + email);
+      });
+    } else {
+      showToast("Email: " + email);
+    }
+  });
+});
 
 // ========== FORMSPREE AJAX CONTACT FORM ==========
 const contactForm = document.getElementById('contact-form');
@@ -110,7 +192,7 @@ if (contactForm && formStatus && formSubmitBtn) {
   });
 }
 
-// ========== BUTIK MODAL CONTROLLER ==========
+// ========== BUTIK MODAL & TAB CONTROLLER ==========
 const openModalBtn = document.getElementById('open-butik-modal');
 const closeModalBtn = document.getElementById('close-butik-modal');
 const butikModal = document.getElementById('butik-modal');
@@ -142,17 +224,34 @@ if (openModalBtn && closeModalBtn && butikModal) {
   });
 }
 
-// ========== INTERACTIVE TERMINAL LOGIC ==========
+// Modal tab switching
+const modalTabs = document.querySelectorAll('.modal-tab');
+modalTabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    modalTabs.forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+    tab.classList.add('active');
+    const target = document.getElementById(tab.dataset.tab);
+    if (target) target.classList.add('active');
+  });
+});
+
+// ========== INTERACTIVE TERMINAL LOGIC WITH EASTER EGGS ==========
 const termInput = document.getElementById('terminal-input');
 const termBody = document.getElementById('terminal-body');
 
 if (termInput && termBody) {
   const commands = {
-    help: "Available commands: <b style='color:var(--gold)'>about</b>, <b style='color:var(--gold)'>skills</b>, <b style='color:var(--gold)'>contact</b>, <b style='color:var(--gold)'>cello</b>, <b style='color:var(--gold)'>clear</b>",
+    help: "Available commands: <b style='color:var(--gold)'>about</b>, <b style='color:var(--gold)'>skills</b>, <b style='color:var(--gold)'>projects</b>, <b style='color:var(--gold)'>butik</b>, <b style='color:var(--gold)'>contact</b>, <b style='color:var(--gold)'>cello</b>, <b style='color:var(--gold)'>resume</b>, <b style='color:var(--gold)'>matrix</b>, <b style='color:var(--gold)'>clear</b>",
     about: "Marc Lyndon C. Ramos — 4th Year BS IT Student @ STI Batangas (Graduation 2027). Developer & Musician.",
     skills: "HTML/CSS/JS, Python, Java, C#, C++, MySQL, AWS, Git, Figma, Blender.",
+    projects: "Featured Capstone: BUTIK (Web-Based Flower Arrangement System with AI Chatbot). Role: Assistant Programmer.",
+    butik: "Opening BUTIK Live Demo... <a href='https://end-user-testing.web.app/' target='_blank' rel='noopener' style='color:var(--gold)'>https://end-user-testing.web.app/ ↗</a>",
+    demo: "Opening BUTIK Live Demo... <a href='https://end-user-testing.web.app/' target='_blank' rel='noopener' style='color:var(--gold)'>https://end-user-testing.web.app/ ↗</a>",
     contact: "Email: donutdisturbq1@gmail.com | GitHub: donutdisturb-jpg",
-    cello: "Principal Cellist & Instructor @ Ascente Music Academy."
+    cello: "Principal Cellist & Instructor @ Ascente Music Academy.",
+    resume: "Opening Résumé... <a href='assets/Marc-Lyndon-Ramos-Resume.pdf' target='_blank' rel='noopener' style='color:var(--gold)'>Download PDF ↗</a>",
+    matrix: "<span style='color:#27c93f'>01001001 01010100 00100000 01010011 01010100 01010101 01000100 01000101 01001110 01010100 (IT STUDENT)</span>"
   };
 
   termInput.addEventListener('keydown', (e) => {

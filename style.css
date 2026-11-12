@@ -39,7 +39,7 @@ a {
   margin: auto;
 }
 
-/* ========== HEADER ========== */
+/* ========== HEADER & SCROLLSPY ========== */
 .header {
   position: sticky;
   top: 0;
@@ -74,7 +74,12 @@ a {
   font-size: 0.78rem;
 }
 
-.links a:hover {
+.links a {
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.links a:hover,
+.links a.active {
   color: var(--gold);
 }
 
@@ -738,7 +743,7 @@ h2 {
   margin: 0;
 }
 
-/* ========== MUSIC & AUDIO PLAYER ========== */
+/* ========== MUSIC & AUDIO PLAYER ENHANCEMENT ========== */
 .music-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -758,6 +763,38 @@ h2 {
 
 .audio-player {
   margin-top: 24px;
+}
+
+.audio-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 12px;
+  max-width: 320px;
+}
+
+.audio-progress-track {
+  flex: 1;
+  height: 4px;
+  background: #2a2d31;
+  border-radius: 2px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.audio-progress-bar {
+  height: 100%;
+  width: 0%;
+  background: var(--gold);
+  transition: width 0.1s linear;
+}
+
+.audio-time {
+  font: 0.65rem var(--mono);
+  color: var(--muted);
+  min-width: 75px;
+  text-align: right;
 }
 
 .music-art {
@@ -821,7 +858,7 @@ h2 {
   border: none;
 }
 
-/* ========== CONTACT FORM ========== */
+/* ========== CONTACT FORM & TOAST BANNER ========== */
 .contact-panel {
   background: var(--sand);
   padding: 65px;
@@ -935,6 +972,29 @@ h2 {
   overflow-wrap: anywhere;
 }
 
+.toast {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  background: var(--gold);
+  color: var(--ink);
+  padding: 12px 24px;
+  font: 0.75rem/1 var(--mono);
+  font-weight: 600;
+  border-radius: 4px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  z-index: 200;
+}
+
+.toast.show {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}
+
 /* ========== FOOTER ========== */
 footer {
   background: var(--ink);
@@ -980,7 +1040,7 @@ footer {
   pointer-events: auto;
 }
 
-/* ========== BUTIK MODAL STYLES ========== */
+/* ========== BUTIK MODAL & TABBED SHOWCASE STYLES ========== */
 .modal-backdrop {
   position: fixed;
   inset: 0;
@@ -1078,6 +1138,59 @@ footer {
 
 .modal-block li {
   margin-bottom: 6px;
+}
+
+.modal-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.modal-tab {
+  background: var(--ink);
+  border: 1px solid #2a2d31;
+  color: var(--muted);
+  padding: 6px 12px;
+  font: 0.68rem var(--mono);
+  cursor: pointer;
+  transition: 0.2s;
+  border-radius: 3px;
+}
+
+.modal-tab.active,
+.modal-tab:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.tab-preview-box {
+  background: var(--ink);
+  border: 1px dashed #2a2d31;
+  padding: 18px;
+  border-radius: 4px;
+  text-align: left;
+}
+
+.tab-preview-box span {
+  font: 0.75rem var(--mono);
+  color: var(--gold);
+  display: block;
+  margin-bottom: 6px;
+}
+
+.tab-preview-box p {
+  font-size: 0.82rem;
+  color: #9da4aa;
+  margin: 0;
 }
 
 .iso-metrics {

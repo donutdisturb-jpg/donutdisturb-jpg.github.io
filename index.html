@@ -25,6 +25,28 @@
   <meta name="twitter:description" content="IT Student, Developer & Musician based in Batangas, Philippines. Building technology with purpose and creativity with discipline.">
   <meta name="twitter:image" content="https://donutdisturb-jpg.github.io/assets/profile.jpg">
 
+  <!-- Schema.org Structured Data for Google SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Marc Lyndon C. Ramos",
+    "url": "https://donutdisturb-jpg.github.io",
+    "jobTitle": "IT Student & Musician",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Ascente Music Academy"
+    },
+    "alumniOf": {
+      "@type": "EducationalOrganization",
+      "name": "STI College – Batangas"
+    },
+    "sameAs": [
+      "https://github.com/donutdisturb-jpg"
+    ]
+  }
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
@@ -234,6 +256,9 @@
             </div>
             
             <div style="display: flex; gap: 12px; margin-top: 18px; flex-wrap: wrap;">
+              <a href="https://end-user-testing.web.app/" target="_blank" rel="noopener" class="button dark-button">
+                Live Demo ↗
+              </a>
               <button id="open-butik-modal" class="button gold">
                 View Capstone Breakdown ↗
               </button>
@@ -308,6 +333,12 @@
             <button id="play-cello-btn" class="button dark-button">
               <span class="icon">▶</span> Listen to a Snippet
             </button>
+            <div class="audio-controls">
+              <div class="audio-progress-track" id="audio-track">
+                <div class="audio-progress-bar" id="audio-bar"></div>
+              </div>
+              <span class="audio-time" id="audio-time">0:00 / 0:00</span>
+            </div>
           </div>
         </div>
 
@@ -352,8 +383,8 @@
         
         <div class="contact-grid">
           <div>
-            <small>EMAIL</small>
-            <a href="mailto:donutdisturbq1@gmail.com">donutdisturbq1@gmail.com</a>
+            <small>EMAIL (CLICK TO COPY)</small>
+            <a href="mailto:donutdisturbq1@gmail.com" class="copy-email-link">donutdisturbq1@gmail.com 📋</a>
           </div>
           <div>
             <small>GITHUB</small>
@@ -377,6 +408,9 @@
   </footer>
 
   <button class="top" aria-label="Back to top">↑</button>
+
+  <!-- One-Click Toast Notification Container -->
+  <div id="toast" class="toast">✓ Message copied!</div>
 
   <!-- BUTIK Project Modal Popup -->
   <div id="butik-modal" class="modal-backdrop" aria-hidden="true">
@@ -402,6 +436,32 @@
             </ul>
           </div>
           <div class="modal-block">
+            <h4>Interactive Module Showcase</h4>
+            <div class="modal-tabs">
+              <button class="modal-tab active" data-tab="tab-studio">Arrangement Studio</button>
+              <button class="modal-tab" data-tab="tab-chatbot">AI Chatbot Assistant</button>
+              <button class="modal-tab" data-tab="tab-inventory">Inventory Portal</button>
+            </div>
+            <div class="tab-content active" id="tab-studio">
+              <div class="tab-preview-box">
+                <span>[ Custom Bouquet Studio ]</span>
+                <p>Real-time visual composer allowing users to pick flower types, stem quantities, wrapper styles, and ribbons with automated price recalculation.</p>
+              </div>
+            </div>
+            <div class="tab-content" id="tab-chatbot">
+              <div class="tab-preview-box">
+                <span>[ Natural Language Assistant ]</span>
+                <p>Automated chat module helping users select floral arrangements based on occasion, budget, and bouquet care instructions.</p>
+              </div>
+            </div>
+            <div class="tab-content" id="tab-inventory">
+              <div class="tab-preview-box">
+                <span>[ Admin & Relational Database ]</span>
+                <p>Relational MySQL backend tracking fresh flower stock levels, customer orders, delivery schedules, and shop analytics.</p>
+              </div>
+            </div>
+          </div>
+          <div class="modal-block">
             <h4>My Technical Contributions</h4>
             <ul>
               <li>Implemented front-end user interface components using HTML5, CSS3, and Vanilla JS.</li>
@@ -421,9 +481,14 @@
             </div>
           </div>
           <div class="modal-block" style="border-top: 1px solid #2a2d31; padding-top: 18px; margin-top: 10px;">
-            <a href="https://github.com/donutdisturb-jpg" target="_blank" rel="noopener" class="button gold">
-              View Repository on GitHub ↗
-            </a>
+            <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+              <a href="https://end-user-testing.web.app/" target="_blank" rel="noopener" class="button dark-button">
+                Live Demo ↗
+              </a>
+              <a href="https://github.com/donutdisturb-jpg" target="_blank" rel="noopener" class="button gold">
+                View Repository on GitHub ↗
+              </a>
+            </div>
           </div>
         </div>
       </div>
