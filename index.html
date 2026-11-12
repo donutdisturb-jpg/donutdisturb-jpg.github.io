@@ -63,7 +63,7 @@
     <section class="light section" id="about">
       <div class="wrap">
         <p class="eyebrow">01 — A LITTLE ABOUT ME</p>
-        <h2>Grounded in learning.<br><em>Driven by curiosity.</em></h2>
+        <h2 class="reveal">Grounded in learning.<br><em>Driven by curiosity.</em></h2>
         <div class="two-col">
           <p class="lead">I’m a fourth-year Bachelor of Science in Information Technology student at <strong>STI College – Batangas</strong>, currently completing my undergraduate studies and strengthening my technical foundation.</p>
           <div class="body-copy">
@@ -83,33 +83,74 @@
     <section class="dark section" id="skills">
       <div class="wrap">
         <p class="eyebrow">02 — TECHNICAL EXPERTISE</p>
-        <h2>A growing toolkit.<br><em>A practical mindset.</em></h2>
+        <h2 class="reveal">A growing toolkit.<br><em>A practical mindset.</em></h2>
         <p class="section-intro">Technologies and tools I have encountered through coursework, projects, and practice.</p>
+        
         <div class="skills">
-          <article>
+          <article class="reveal">
             <small>01</small>
             <h3>Development</h3>
-            <p>HTML · CSS · JavaScript<br>Python · Java · C# · C++</p>
+            <div class="tech-badges">
+              <span class="badge"><img src="https://cdn.simpleicons.org/html5/E34F26" alt=""> HTML5</span>
+              <span class="badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt=""> CSS3</span>
+              <span class="badge"><img src="https://cdn.simpleicons.org/javascript/F7DF1E" alt=""> JavaScript</span>
+              <span class="badge"><img src="https://cdn.simpleicons.org/python/3776AB" alt=""> Python</span>
+              <span class="badge"><img src="https://cdn.simpleicons.org/openjdk/ED8B00" alt=""> Java</span>
+              <span class="badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg" alt=""> C#</span>
+              <span class="badge"><img src="https://cdn.simpleicons.org/cplusplus/00599C" alt=""> C++</span>
+            </div>
           </article>
-          <article>
+          
+          <article class="reveal">
             <small>02</small>
             <h3>Data & Systems</h3>
-            <p>MySQL · NoSQL<br>Networking fundamentals</p>
+            <div class="tech-badges">
+              <span class="badge"><img src="https://cdn.simpleicons.org/mysql/4479A1" alt=""> MySQL</span>
+              <span class="badge"><img src="https://cdn.simpleicons.org/mongodb/47A248" alt=""> NoSQL</span>
+              <span class="badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" style="filter: invert(1);" alt=""> AWS</span>
+              <span class="badge"><img src="https://cdn.simpleicons.org/sap/008FD3" alt=""> SAP</span>
+            </div>
           </article>
-          <article>
+
+          <article class="reveal">
             <small>03</small>
             <h3>Tools & Platforms</h3>
-            <p>VS Code · Visual Studio<br>Git · GitHub · AWS · SAP</p>
+            <div class="tech-badges">
+              <span class="badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" alt=""> VS Code</span>
+              <span class="badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/visualstudio/visualstudio-plain.svg" alt=""> Visual Studio</span>
+              <span class="badge"><img src="https://cdn.simpleicons.org/git/F05032" alt=""> Git</span>
+              <span class="badge"><img src="https://cdn.simpleicons.org/github/fff" alt=""> GitHub</span>
+            </div>
           </article>
-          <article>
+
+          <article class="reveal">
             <small>04</small>
             <h3>Design & Productivity</h3>
-            <p>Figma · Canva · Blender (Basic)<br>Microsoft Office</p>
+            <div class="tech-badges">
+              <span class="badge"><img src="https://cdn.simpleicons.org/figma/F24E1E" alt=""> Figma</span>
+              <span class="badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/canva/canva-original.svg" alt=""> Canva</span>
+              <span class="badge"><img src="https://cdn.simpleicons.org/blender/E87D0D" alt=""> Blender</span>
+            </div>
           </article>
         </div>
+
         <div class="skill-foot">
           <small>ALSO PRACTICING</small>
           <p>Documentation · Technical reporting · UI/UX fundamentals · Troubleshooting · System testing</p>
+        </div>
+
+        <!-- GitHub Contribution Activity -->
+        <div class="github-activity-card reveal">
+          <div class="github-header">
+            <h3>GitHub Contribution Activity</h3>
+          </div>
+          <div class="github-chart-wrap">
+            <img src="https://ghchart.rshah.org/c9a66b/donutdisturb-jpg" alt="Marc Lyndon C. Ramos GitHub Contribution Chart" class="github-chart">
+          </div>
+          <div class="github-foot">
+            <small>Synced directly from GitHub</small>
+            <a href="https://github.com/donutdisturb-jpg" target="_blank" rel="noopener">View Profile ↗</a>
+          </div>
         </div>
       </div>
     </section>
@@ -118,10 +159,10 @@
       <div class="wrap">
         <p class="eyebrow">03 — SELECTED WORK</p>
         <div class="heading-row">
-          <h2>Learning by<br><em>building.</em></h2>
+          <h2 class="reveal">Learning by<br><em>building.</em></h2>
           <p class="section-intro">A selection of academic work and projects. More will be added as I continue developing.</p>
         </div>
-        <article class="project">
+        <article class="project reveal">
           <div class="project-art">
             <div class="mock-window">
               <div class="window-bar">● ● ● <span>BUTIK / PROJECT OVERVIEW</span></div>
@@ -153,6 +194,11 @@
             <div class="tags">
               <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Database</span><span>AI Chatbot</span>
             </div>
+            
+            <button id="open-butik-modal" class="button gold" style="margin-top: 18px; cursor: pointer; border: none;">
+              View Capstone Breakdown ↗
+            </button>
+            
             <p class="note">Repository link and approved project screenshots can be added when available.</p>
           </div>
         </article>
@@ -162,7 +208,7 @@
     <section class="sand section" id="experience">
       <div class="wrap">
         <p class="eyebrow">04 — EXPERIENCE & RECOGNITION</p>
-        <h2>People skills are<br><em>professional skills.</em></h2>
+        <h2 class="reveal">People skills are<br><em>professional skills.</em></h2>
         <div class="timeline">
           <article>
             <small>2026 — PRESENT</small>
@@ -207,12 +253,21 @@
       <div class="wrap music-grid">
         <div>
           <p class="eyebrow">05 — BEYOND THE SCREEN</p>
-          <h2>Technology<br>has logic.<br><em>Music has feeling.</em></h2>
+          <h2 class="reveal">Technology<br>has logic.<br><em>Music has feeling.</em></h2>
           <p>Music is an important part of who I am. Through cello and teaching, I have learned to listen closely, practice with consistency, and appreciate the process behind meaningful progress.</p>
           <div class="tags">
             <span>CELLO</span><span>MUSIC THEORY</span><span>TEACHING & MENTORING</span>
           </div>
+          
+          <!-- Audio Player Feature -->
+          <div class="audio-player" style="margin-top: 35px;">
+            <button id="play-cello-btn" class="button gold" style="display: flex; align-items: center; gap: 10px;">
+              <span class="icon">▶</span> Listen to a Snippet
+            </button>
+            <audio id="cello-audio" src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Cello_suite_1_prelude_-_John_Michel.ogg" preload="none"></audio>
+          </div>
         </div>
+
         <div class="music-art">
           <div class="rings"></div>
           <div class="clef">𝄢</div>
@@ -225,7 +280,7 @@
     <section class="light section" id="contact">
       <div class="wrap contact-panel">
         <p class="eyebrow">06 — LET’S CONNECT</p>
-        <h2>Have an opportunity<br>or a project in mind?</h2>
+        <h2 class="reveal">Have an opportunity<br>or a project in mind?</h2>
         <p>I’m open to meaningful opportunities to learn, contribute, and collaborate.</p>
         
         <div class="actions" style="justify-content: center; margin-top: 0;">
@@ -260,5 +315,38 @@
   </footer>
 
   <button class="top" aria-label="Back to top">↑</button>
+
+  <!-- BUTIK Project Modal Popup -->
+  <div id="butik-modal" class="modal-backdrop" aria-hidden="true">
+    <div class="modal-content">
+      <button class="modal-close" id="close-butik-modal" aria-label="Close modal">×</button>
+      <div class="modal-header">
+        <p class="eyebrow" style="margin-bottom: 5px;">STI COLLEGE · CAPSTONE OVERVIEW</p>
+        <h2>BUTIK<span>.</span></h2>
+        <p class="subtitle" style="color: var(--gold);">Web-Based Flower Arrangement System with AI Chatbot</p>
+      </div>
+      <div class="modal-body">
+        <div class="modal-grid">
+          <div class="modal-block">
+            <h4>My Role: Assistant Programmer</h4>
+            <p>Collaborated with the capstone team to develop a digital ordering and flower customization platform for Pinkish Flower Shop.</p>
+          </div>
+          <div class="modal-block">
+            <h4>Technical Contributions</h4>
+            <ul>
+              <li>Implemented front-end user interface components using HTML, CSS, and JavaScript.</li>
+              <li>Assisted with MySQL relational database structuring and testing queries.</li>
+              <li>Supported API integration and testing for the AI chatbot feature.</li>
+              <li>Performed systematic debugging and front-end cross-browser testing.</li>
+            </ul>
+          </div>
+          <div class="modal-block">
+            <h4>ISO 9126 Evaluation</h4>
+            <p>Participated in formal software evaluation measuring <b>Functionality</b>, <b>Usability</b>, <b>Reliability</b>, and <b>Efficiency</b> across target user groups.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

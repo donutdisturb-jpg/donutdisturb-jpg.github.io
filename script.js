@@ -26,3 +26,21 @@ topButton.addEventListener('click', () => {
 });
 
 document.querySelector('#year').textContent = new Date().getFullYear();
+// ========== SCROLL REVEAL OBSERVER ==========
+const revealElements = document.querySelectorAll('.reveal');
+
+if (revealElements.length > 0) {
+  const revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+        observer.unobserve(entry.target); // Animate once
+      }
+    });
+  }, {
+    threshold: 0.12,
+    rootMargin: '0px 0px -40px 0px'
+  });
+
+  revealElements.forEach(el => revealObserver.observe(el));
+}
