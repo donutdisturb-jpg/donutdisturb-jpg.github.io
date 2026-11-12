@@ -6,7 +6,7 @@
   <meta name="description" content="Marc Lyndon C. Ramos — IT student, developer, and musician.">
   <meta name="theme-color" content="#0e0f11">
   <title>Marc Lyndon C. Ramos — Portfolio</title>
-
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
@@ -35,7 +35,7 @@
         <p class="eyebrow"><i></i> PERSONAL PORTFOLIO · 2026</p>
         <h1>Marc Lyndon<br><em>C. Ramos.</em></h1>
         <p class="subtitle">IT Student <b>·</b> Developer <b>·</b> Musician</p>
-        <p class="intro">I'm interested in building useful digital experiences, learning how technology works behind the scenes, and bringing creativity into everything I do.</p>
+        <p class="intro">I’m interested in building useful digital experiences, learning how technology works behind the scenes, and bringing creativity into everything I do.</p>
         <div class="actions">
           <a class="button gold" href="#projects">Explore my work ↗</a>
           <a class="underlink" href="#contact">Get in touch ↗</a>
@@ -82,7 +82,7 @@
         <p class="eyebrow">01 — A LITTLE ABOUT ME</p>
         <h2 class="reveal">Grounded in learning.<br><em>Driven by curiosity.</em></h2>
         <div class="two-col">
-          <p class="lead">I'm a fourth-year Bachelor of Science in Information Technology student at <strong>STI College – Batangas</strong>, currently completing my undergraduate studies and strengthening my technical foundation.</p>
+          <p class="lead">I’m a fourth-year Bachelor of Science in Information Technology student at <strong>STI College – Batangas</strong>, currently completing my undergraduate studies and strengthening my technical foundation.</p>
           <div class="body-copy">
             <p>My academic experience has introduced me to web development, databases, programming, system testing, and collaborative project work. I enjoy supporting a team, solving problems, and steadily improving my technical foundation.</p>
             <p>Outside technology, I teach cello and music theory. Teaching has helped me develop patience, communication, responsibility, and the ability to guide others through a learning process.</p>
@@ -102,7 +102,7 @@
         <p class="eyebrow">02 — TECHNICAL EXPERTISE</p>
         <h2 class="reveal">A growing toolkit.<br><em>A practical mindset.</em></h2>
         <p class="section-intro">Technologies and tools I have encountered through coursework, projects, and practice.</p>
-
+        
         <div class="skills">
           <article class="reveal">
             <small>01</small>
@@ -117,7 +117,7 @@
               <span class="badge"><img src="https://cdn.simpleicons.org/cplusplus/00599C" alt=""> C++</span>
             </div>
           </article>
-
+          
           <article class="reveal">
             <small>02</small>
             <h3>Data & Systems</h3>
@@ -125,7 +125,7 @@
               <span class="badge"><img src="https://cdn.simpleicons.org/mysql/4479A1" alt=""> MySQL</span>
               <span class="badge"><img src="https://cdn.simpleicons.org/mongodb/47A248" alt=""> NoSQL</span>
               <span class="badge">
-                <svg viewBox="0 0 24 24" fill="#FF9900" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                <svg viewBox="0 0 24 24" fill="#FF9900"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
                 AWS
               </span>
               <span class="badge"><img src="https://cdn.simpleicons.org/sap/008FD3" alt=""> SAP</span>
@@ -159,6 +159,7 @@
           <p>Documentation · Technical reporting · UI/UX fundamentals · Troubleshooting · System testing</p>
         </div>
 
+        <!-- GitHub Contribution Activity -->
         <div class="github-activity-card reveal">
           <div class="github-header">
             <h3>GitHub Contribution Activity</h3>
@@ -213,12 +214,15 @@
             <div class="tags">
               <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Database</span><span>AI Chatbot</span>
             </div>
-
-            <button id="open-butik-modal" class="button gold" style="margin-top: 18px; cursor: pointer; border: none;">
-              View Capstone Breakdown ↗
-            </button>
-
-            <p class="note">Repository link and approved project screenshots can be added when available.</p>
+            
+            <div style="display: flex; gap: 12px; margin-top: 18px; flex-wrap: wrap;">
+              <button id="open-butik-modal" class="button gold">
+                View Capstone Breakdown ↗
+              </button>
+              <a href="https://github.com/donutdisturb-jpg" target="_blank" rel="noopener" class="button dark-button">
+                Repository ↗
+              </a>
+            </div>
           </div>
         </article>
       </div>
@@ -270,14 +274,14 @@
 
     <section class="dark section music" id="music">
       <div class="wrap music-grid">
-        <div class="music-copy">
+        <div>
           <p class="eyebrow">05 — BEYOND THE SCREEN</p>
           <h2 class="reveal">Technology<br>has logic.<br><em>Music has feeling.</em></h2>
           <p>Music is an important part of who I am. Through cello and teaching, I have learned to listen closely, practice with consistency, and appreciate the process behind meaningful progress.</p>
           <div class="tags">
             <span>CELLO</span><span>MUSIC THEORY</span><span>TEACHING & MENTORING</span>
           </div>
-
+          
           <div class="audio-player">
             <audio id="cello-audio" preload="metadata">
               <source src="assets/cello-snippet.mp3" type="audio/mpeg">
@@ -300,15 +304,15 @@
 
     <section class="light section" id="contact">
       <div class="wrap contact-panel">
-        <p class="eyebrow">06 — LET'S CONNECT</p>
+        <p class="eyebrow">06 — LET’S CONNECT</p>
         <h2 class="reveal">Have an opportunity<br>or a project in mind?</h2>
-        <p>I'm open to meaningful opportunities to learn, contribute, and collaborate.</p>
-
+        <p>I’m open to meaningful opportunities to learn, contribute, and collaborate.</p>
+        
         <div class="actions" style="justify-content: center; margin-top: 0;">
           <a class="button dark-button" href="mailto:donutdisturbq1@gmail.com">Email me ↗</a>
           <a class="button dark-button" href="assets/Marc-Lyndon-Ramos-Resume.pdf" target="_blank" rel="noopener">Download Résumé ↗</a>
         </div>
-
+        
         <div class="contact-grid">
           <div>
             <small>EMAIL</small>
@@ -338,32 +342,51 @@
   <button class="top" aria-label="Back to top">↑</button>
 
   <!-- BUTIK Project Modal Popup -->
-  <div id="butik-modal" class="modal-backdrop" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="butik-modal-title">
+  <div id="butik-modal" class="modal-backdrop" aria-hidden="true">
     <div class="modal-content">
       <button class="modal-close" id="close-butik-modal" aria-label="Close modal">×</button>
       <div class="modal-header">
         <p class="eyebrow" style="margin-bottom: 5px;">STI COLLEGE · CAPSTONE OVERVIEW</p>
-        <h2 id="butik-modal-title">BUTIK<span>.</span></h2>
+        <h2>BUTIK<span>.</span></h2>
         <p class="subtitle" style="color: var(--gold);">Web-Based Flower Arrangement System with AI Chatbot</p>
       </div>
       <div class="modal-body">
         <div class="modal-grid">
           <div class="modal-block">
             <h4>My Role: Assistant Programmer</h4>
-            <p>Collaborated with the capstone team to develop a digital ordering and flower customization platform for Pinkish Flower Shop.</p>
+            <p>Collaborated with the capstone team to develop a digital ordering and flower customization platform for <b>Pinkish Flower Shop</b> in Batangas.</p>
           </div>
           <div class="modal-block">
-            <h4>Technical Contributions</h4>
+            <h4>Core System Modules</h4>
             <ul>
-              <li>Implemented front-end user interface components using HTML, CSS, and JavaScript.</li>
-              <li>Assisted with MySQL relational database structuring and testing queries.</li>
-              <li>Supported API integration and testing for the AI chatbot feature.</li>
-              <li>Performed systematic debugging and front-end cross-browser testing.</li>
+              <li><b>Flower Arrangement Studio:</b> Interactive customer portal for custom bouquet composition.</li>
+              <li><b>AI Chatbot Assistant:</b> Natural language processing tool guiding users on flower selection and care.</li>
+              <li><b>Inventory & Order Management:</b> Backend MySQL database handling shop catalog and orders.</li>
             </ul>
           </div>
           <div class="modal-block">
-            <h4>ISO 9126 Evaluation</h4>
-            <p>Participated in formal software evaluation measuring <b>Functionality</b>, <b>Usability</b>, <b>Reliability</b>, and <b>Efficiency</b> across target user groups.</p>
+            <h4>My Technical Contributions</h4>
+            <ul>
+              <li>Implemented front-end user interface components using HTML5, CSS3, and Vanilla JS.</li>
+              <li>Assisted with MySQL relational database structuring and query optimization.</li>
+              <li>Supported API integration and testing for the AI chatbot module.</li>
+              <li>Performed systematic debugging and cross-browser responsiveness testing.</li>
+            </ul>
+          </div>
+          <div class="modal-block">
+            <h4>ISO 9126 Evaluation Standard</h4>
+            <p>Participated in formal software quality evaluation measuring four key ISO metrics:</p>
+            <div class="iso-metrics">
+              <div class="iso-badge"><b>Functionality</b><span>Correct feature execution</span></div>
+              <div class="iso-badge"><b>Usability</b><span>Intuitive UI design</span></div>
+              <div class="iso-badge"><b>Reliability</b><span>Stable error handling</span></div>
+              <div class="iso-badge"><b>Efficiency</b><span>Fast page load & response</span></div>
+            </div>
+          </div>
+          <div class="modal-block" style="border-top: 1px solid #2a2d31; padding-top: 18px; margin-top: 10px;">
+            <a href="https://github.com/donutdisturb-jpg" target="_blank" rel="noopener" class="button gold">
+              View Repository on GitHub ↗
+            </a>
           </div>
         </div>
       </div>

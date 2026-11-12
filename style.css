@@ -141,12 +141,12 @@ h2 em {
   letter-spacing: -0.045em;
 }
 
-.hero .subtitle {
+.subtitle {
   color: #41474d;
   font-size: 1.05rem;
 }
 
-.hero .subtitle b {
+.subtitle b {
   color: var(--gold);
   padding: 0 7px;
 }
@@ -162,7 +162,6 @@ h2 em {
   align-items: center;
   gap: 28px;
   margin-top: 32px;
-  flex-wrap: wrap;
 }
 
 .button {
@@ -172,6 +171,7 @@ h2 em {
   font-weight: 700;
   transition: 0.2s;
   cursor: pointer;
+  border: none;
 }
 
 .button:hover {
@@ -241,10 +241,6 @@ h2 em {
 
 .hero-foot a {
   color: #41474d;
-}
-
-.hero-foot a:hover {
-  color: var(--gold);
 }
 
 /* ========== PORTRAIT ========== */
@@ -754,14 +750,14 @@ h2 {
   margin-bottom: 25px;
 }
 
-.music-copy > p:not(.eyebrow) {
+.music-grid > div > p:not(.eyebrow) {
   color: #aeb4ba;
   font-size: 0.9rem;
   max-width: 460px;
 }
 
 .audio-player {
-  margin-top: 28px;
+  margin-top: 24px;
 }
 
 .music-art {
@@ -982,11 +978,6 @@ footer {
   color: var(--gold);
 }
 
-.modal-header .subtitle {
-  font-size: 0.9rem;
-  margin: 0;
-}
-
 .modal-body {
   margin-top: 24px;
   border-top: 1px solid #2a2d31;
@@ -1021,25 +1012,15 @@ footer {
   margin-bottom: 6px;
 }
 
-/* ========== SCROLL REVEAL ANIMATIONS ========== */
+/* ========== SCROLL REVEAL ANIMATIONS (SAFE FALLBACK) ========== */
+/* Defaults to visible immediately so text never stays missing! */
 .reveal {
-  opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: opacity, transform;
-}
-
-.reveal.active {
   opacity: 1;
   transform: translateY(0);
+  transition: opacity 0.7s ease, transform 0.7s ease;
 }
 
-.skills article.reveal:nth-child(1) { transition-delay: 0.1s; }
-.skills article.reveal:nth-child(2) { transition-delay: 0.2s; }
-.skills article.reveal:nth-child(3) { transition-delay: 0.3s; }
-.skills article.reveal:nth-child(4) { transition-delay: 0.4s; }
-
-/* ========== INTERACTIVE TERMINAL ========== */
+/* Interactive terminal shell */
 .hero-terminal {
   margin-top: 24px;
   background: #0a0b0d;
@@ -1293,10 +1274,39 @@ footer {
   *::after {
     transition: none !important;
   }
+}
+/* ISO 9126 Badge Layout inside Modal */
+.iso-metrics {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-top: 12px;
+}
 
-  .reveal {
-    opacity: 1 !important;
-    transform: none !important;
-    transition: none !important;
+.iso-badge {
+  background: var(--ink);
+  border: 1px solid #2a2d31;
+  padding: 10px 12px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.iso-badge b {
+  color: var(--gold);
+  font-size: 0.8rem;
+  font-family: var(--serif);
+}
+
+.iso-badge span {
+  color: var(--muted);
+  font-size: 0.68rem;
+  font-family: var(--mono);
+}
+
+@media (max-width: 500px) {
+  .iso-metrics {
+    grid-template-columns: 1fr;
   }
 }

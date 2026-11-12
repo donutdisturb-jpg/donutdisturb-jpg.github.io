@@ -48,7 +48,7 @@ if (playBtn && celloAudio) {
         if (waveArt) waveArt.classList.add('playing');
       }).catch(error => {
         console.error("Playback error:", error);
-        alert("Audio playback failed. Please ensure 'assets/cello-snippet.mp3' exists in the repository.");
+        alert("Audio playback failed. Please ensure 'assets/cello-snippet.mp3' exists in your assets folder.");
       });
     } else {
       celloAudio.pause();
@@ -60,10 +60,6 @@ if (playBtn && celloAudio) {
   celloAudio.addEventListener('ended', () => {
     playBtn.innerHTML = '<span class="icon">▶</span> Listen to a Snippet';
     if (waveArt) waveArt.classList.remove('playing');
-  });
-
-  celloAudio.addEventListener('error', () => {
-    console.error("Audio file could not be loaded. Check assets/cello-snippet.mp3");
   });
 }
 
@@ -97,25 +93,6 @@ if (openModalBtn && closeModalBtn && butikModal) {
       closeModal();
     }
   });
-}
-
-// ========== SCROLL REVEAL OBSERVER ==========
-const revealElements = document.querySelectorAll('.reveal');
-
-if (revealElements.length > 0) {
-  const revealObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('active');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, {
-    threshold: 0.12,
-    rootMargin: '0px 0px -40px 0px'
-  });
-
-  revealElements.forEach(el => revealObserver.observe(el));
 }
 
 // ========== INTERACTIVE TERMINAL LOGIC ==========
