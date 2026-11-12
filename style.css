@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
 
 :root {
-  --ink: #20252b;
-  --ink2: #2b3239;
-  --ivory: #f1eee7;
+  --ink: #0e0f11;
+  --ink2: #181a1d;
+  --ivory: #f4f1ea;
   --paper: #faf9f6;
   --sand: #e8e1d4;
   --gold: #c9a66b;
@@ -44,8 +44,8 @@ a {
   position: sticky;
   top: 0;
   z-index: 20;
-  background: rgba(32, 37, 43, 0.97);
-  border-bottom: 1px solid #424950;
+  background: rgba(14, 15, 17, 0.97);
+  border-bottom: 1px solid #2a2d31;
 }
 
 .nav {
@@ -141,19 +141,19 @@ h2 em {
   letter-spacing: -0.045em;
 }
 
-.subtitle {
-  color: #d6d8da;
+.hero .subtitle {
+  color: #41474d;
   font-size: 1.05rem;
 }
 
-.subtitle b {
+.hero .subtitle b {
   color: var(--gold);
   padding: 0 7px;
 }
 
 .intro {
   max-width: 480px;
-  color: #aeb4ba;
+  color: #626a71;
   font-size: 0.95rem;
 }
 
@@ -162,6 +162,7 @@ h2 em {
   align-items: center;
   gap: 28px;
   margin-top: 32px;
+  flex-wrap: wrap;
 }
 
 .button {
@@ -170,6 +171,7 @@ h2 em {
   font-size: 0.78rem;
   font-weight: 700;
   transition: 0.2s;
+  cursor: pointer;
 }
 
 .button:hover {
@@ -182,7 +184,7 @@ h2 em {
 }
 
 .underlink {
-  color: var(--ivory);
+  color: var(--ink);
   font-size: 0.78rem;
   border-bottom: 1px solid #777;
   padding-bottom: 5px;
@@ -195,8 +197,8 @@ h2 em {
 
 .monogram-card {
   min-height: 350px;
-  background: #292f36;
-  border: 1px solid #424951;
+  background: var(--ink2);
+  border: 1px solid #2a2d31;
   padding: 25px;
   color: var(--ivory);
 }
@@ -221,7 +223,7 @@ h2 em {
 
 .side-note {
   font: 0.7rem/1.6 var(--mono);
-  color: #9299a0;
+  color: #6b7278;
   margin-top: 18px;
 }
 
@@ -232,13 +234,17 @@ h2 em {
   right: 0;
   display: flex;
   justify-content: space-between;
-  color: #818990;
+  color: #6b7278;
   font: 0.58rem var(--mono);
   letter-spacing: 0.12em;
 }
 
 .hero-foot a {
-  color: #aaa;
+  color: #41474d;
+}
+
+.hero-foot a:hover {
+  color: var(--gold);
 }
 
 /* ========== PORTRAIT ========== */
@@ -249,10 +255,10 @@ h2 em {
   margin: 22px 0 24px;
   position: relative;
   overflow: hidden;
-  background: linear-gradient(145deg, #3b424a, #20252b);
+  background: linear-gradient(145deg, #2a2d31, #0e0f11);
   display: grid;
   place-items: center;
-  border: 1px solid #505861;
+  border: 1px solid #333;
 }
 
 .portrait-placeholder {
@@ -263,7 +269,7 @@ h2 em {
   text-align: center;
   font: 0.7rem/1.8 var(--mono);
   letter-spacing: 0.18em;
-  color: #c9a66b;
+  color: var(--gold);
 }
 
 .portrait-photo {
@@ -365,12 +371,12 @@ h2 {
 .skills {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  border-block: 1px solid #485058;
+  border-block: 1px solid #2a2d31;
 }
 
 .skills article {
   padding: 27px 20px 28px 0;
-  border-right: 1px solid #485058;
+  border-right: 1px solid #2a2d31;
   min-height: 180px;
 }
 
@@ -403,8 +409,8 @@ h2 {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: #252b32;
-  border: 1px solid #3c434c;
+  background: var(--ink2);
+  border: 1px solid #2a2d31;
   border-radius: 6px;
   padding: 6px 11px;
   font: 0.72rem var(--mono);
@@ -417,6 +423,8 @@ h2 {
   transform: translateY(-2px);
 }
 
+.skills .badge img,
+.tech-badges .badge img,
 .badge img,
 .badge svg {
   width: 16px !important;
@@ -451,8 +459,8 @@ h2 {
 /* ========== GITHUB ACTIVITY CARD ========== */
 .github-activity-card {
   margin-top: 48px;
-  background: #292f36;
-  border: 1px solid #424951;
+  background: var(--ink2);
+  border: 1px solid #2a2d31;
   border-radius: 4px;
   padding: 32px;
   color: var(--ivory);
@@ -485,7 +493,7 @@ h2 {
   align-items: center;
   margin-top: 20px;
   padding-top: 16px;
-  border-top: 1px solid #424951;
+  border-top: 1px solid #2a2d31;
 }
 
 .github-foot small {
@@ -536,15 +544,15 @@ h2 {
 }
 
 .mock-window {
-  background: #222830;
+  background: var(--ink2);
   min-height: 320px;
   color: var(--ivory);
-  box-shadow: 0 22px 45px #20252b26;
+  box-shadow: 0 22px 45px rgba(14, 15, 17, 0.25);
 }
 
 .window-bar {
   height: 34px;
-  border-bottom: 1px solid #41474e;
+  border-bottom: 1px solid #2a2d31;
   padding: 8px 13px;
   font-size: 0.5rem;
   color: #aab0b5;
@@ -746,16 +754,20 @@ h2 {
   margin-bottom: 25px;
 }
 
-.music-grid > div > p:not(.eyebrow) {
+.music-copy > p:not(.eyebrow) {
   color: #aeb4ba;
   font-size: 0.9rem;
   max-width: 460px;
 }
 
+.audio-player {
+  margin-top: 28px;
+}
+
 .music-art {
   height: 350px;
-  border: 1px solid #454c53;
-  background: radial-gradient(circle, #303740, #20252b);
+  border: 1px solid #2a2d31;
+  background: radial-gradient(circle, #181a1d, #0e0f11);
   position: relative;
   display: grid;
   place-items: center;
@@ -767,7 +779,7 @@ h2 {
   height: 270px;
   border: 1px solid #806b4d;
   border-radius: 50%;
-  box-shadow: 0 0 0 38px #c9a66b0d, 0 0 0 76px #c9a66b0a;
+  box-shadow: 0 0 0 38px rgba(201, 166, 107, 0.05), 0 0 0 76px rgba(201, 166, 107, 0.04);
 }
 
 .clef {
@@ -895,6 +907,8 @@ footer {
   opacity: 0;
   pointer-events: none;
   cursor: pointer;
+  transition: opacity 0.3s;
+  z-index: 10;
 }
 
 .top.show {
@@ -907,7 +921,7 @@ footer {
   position: fixed;
   inset: 0;
   z-index: 100;
-  background: rgba(18, 21, 25, 0.85);
+  background: rgba(14, 15, 17, 0.85);
   backdrop-filter: blur(8px);
   display: grid;
   place-items: center;
@@ -923,8 +937,8 @@ footer {
 }
 
 .modal-content {
-  background: #252b32;
-  border: 1px solid #424951;
+  background: var(--ink2);
+  border: 1px solid #2a2d31;
   border-radius: 4px;
   width: min(680px, 100%);
   max-height: 85vh;
@@ -968,9 +982,14 @@ footer {
   color: var(--gold);
 }
 
+.modal-header .subtitle {
+  font-size: 0.9rem;
+  margin: 0;
+}
+
 .modal-body {
   margin-top: 24px;
-  border-top: 1px solid #3c434c;
+  border-top: 1px solid #2a2d31;
   padding-top: 24px;
 }
 
@@ -1023,8 +1042,8 @@ footer {
 /* ========== INTERACTIVE TERMINAL ========== */
 .hero-terminal {
   margin-top: 24px;
-  background: #181c21;
-  border: 1px solid #383f47;
+  background: #0a0b0d;
+  border: 1px solid #2a2d31;
   border-radius: 6px;
   overflow: hidden;
   font: 0.72rem/1.5 var(--mono);
@@ -1032,12 +1051,12 @@ footer {
 }
 
 .terminal-bar {
-  background: #22272e;
+  background: var(--ink2);
   padding: 8px 12px;
   display: flex;
   align-items: center;
   gap: 6px;
-  border-bottom: 1px solid #30363d;
+  border-bottom: 1px solid #2a2d31;
 }
 
 .terminal-bar .dot {
@@ -1082,8 +1101,8 @@ footer {
   display: flex;
   align-items: center;
   padding: 8px 12px;
-  background: #1c2128;
-  border-top: 1px solid #2d333b;
+  background: var(--ink2);
+  border-top: 1px solid #2a2d31;
 }
 
 .terminal-input-line input {
@@ -1153,7 +1172,7 @@ footer {
 
   .links a {
     padding: 12px 0;
-    border-bottom: 1px solid #424950;
+    border-bottom: 1px solid #2a2d31;
   }
 
   .contact-link {
@@ -1201,7 +1220,7 @@ footer {
 
   .skills article:nth-child(3),
   .skills article:nth-child(4) {
-    border-top: 1px solid #485058;
+    border-top: 1px solid #2a2d31;
   }
 
   .skills article:nth-child(3) {
