@@ -1001,3 +1001,108 @@ footer {
     transition: none !important;
   }
 }
+/* ========== INTERACTIVE TERMINAL ========== */
+.hero-terminal {
+  margin-top: 24px;
+  background: #181c21;
+  border: 1px solid #383f47;
+  border-radius: 6px;
+  overflow: hidden;
+  font: 0.72rem/1.5 var(--mono);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+.terminal-bar {
+  background: #22272e;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border-bottom: 1px solid #30363d;
+}
+
+.terminal-bar .dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+}
+
+.terminal-bar .red { background: #ff5f56; }
+.terminal-bar .yellow { background: #ffbd2e; }
+.terminal-bar .green { background: #27c93f; }
+
+.terminal-bar small {
+  margin-left: auto;
+  color: #7d8590;
+  font-size: 0.6rem;
+}
+
+.terminal-body {
+  padding: 12px;
+  max-height: 140px;
+  overflow-y: auto;
+  color: #c9d1d9;
+}
+
+.term-line {
+  margin: 0 0 6px;
+  word-break: break-word;
+}
+
+.term-prompt {
+  color: var(--gold);
+  margin-right: 6px;
+}
+
+.term-response {
+  color: #8b949e;
+  padding-left: 12px;
+}
+
+.terminal-input-line {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  background: #1c2128;
+  border-top: 1px solid #2d333b;
+}
+
+.terminal-input-line input {
+  background: none;
+  border: none;
+  color: var(--ivory);
+  font: 0.72rem var(--mono);
+  width: 100%;
+  outline: none;
+}
+/* ========== BADGE ICON SIZE FIX ========== */
+.skills .badge img,
+.tech-badges .badge img,
+.badge img {
+  width: 16px !important;
+  height: 16px !important;
+  max-width: 16px !important;
+  max-height: 16px !important;
+  object-fit: contain !important;
+  display: inline-block !important;
+  flex-shrink: 0 !important;
+}
+
+.tech-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #252b32;
+  border: 1px solid #3c434c;
+  border-radius: 6px;
+  padding: 6px 11px;
+  font: 0.72rem var(--mono);
+  color: var(--ivory);
+}

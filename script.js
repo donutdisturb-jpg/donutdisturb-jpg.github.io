@@ -44,3 +44,42 @@ if (revealElements.length > 0) {
 
   revealElements.forEach(el => revealObserver.observe(el));
 }
+// ========== INTERACTIVE TERMINAL LOGIC ==========
+const termInput = document.getElementById('terminal-input');
+const termBody = document.getElementById('terminal-body');
+
+if (termInput && termBody) {
+  const commands = {
+    help: "Available commands: <b style='color:var(--gold)'>about</b>, <b style='color:var(--gold)'>skills</b>, <b style='color:var(--gold)'>contact</b>, <b style='color:var(--gold)'>cello</b>, <b style='color:var(--gold)'>clear</b>",
+    about: "Marc Lyndon C. Ramos — 4th Year BS IT Student @ STI Batangas (Graduation 2027). Developer & Musician.",
+    skills: "HTML/CSS/JS, Python, Java, C#, C++, MySQL, AWS, Git, Figma, Blender.",
+    contact: "Email: donutdisturbq1@gmail.com | GitHub: donutdisturb-jpg",
+    cello: "Principal Cellist & Instructor @ Ascente Music Academy."
+  };
+
+  termInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+      const val = termInput.value.trim().toLowerCase();
+      termInput.value = '';
+
+      if (!val) return;
+
+      if (val === 'clear') {
+        termBody.innerHTML = '<p class="term-line"><span class="term-prompt">guest@mlr:~$</span> type \'help\' for commands</p>';
+        return;
+      }
+
+      const userLine = document.createElement('p');
+      userLine.className = 'term-line';
+      userLine.innerHTML = `<span class="term-prompt">guest@mlr:~$</span> ${val}`;
+      termBody.appendChild(userLine);
+
+      const resLine = document.createElement('p');
+      resLine.className = 'term-line term-response';
+      resLine.innerHTML = commands[val] || `Command not found: '${val}'. Type <b style='color:var(--gold)'>help</b>.`;
+      termBody.appendChild(resLine);
+
+      termBody.scrollTop = termBody.scrollHeight;
+    }
+  });
+}
