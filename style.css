@@ -821,7 +821,7 @@ h2 {
   border: none;
 }
 
-/* ========== CONTACT ========== */
+/* ========== CONTACT FORM ========== */
 .contact-panel {
   background: var(--sand);
   padding: 65px;
@@ -829,14 +829,82 @@ h2 {
 }
 
 .contact-panel h2 {
-  margin: 0 0 18px;
+  margin: 0 0 12px;
 }
 
 .contact-panel > p:not(.eyebrow) {
-  max-width: 460px;
-  margin: 0 auto 25px;
+  max-width: 480px;
+  margin: 0 auto 30px;
   color: #6b7278;
   font-size: 0.87rem;
+}
+
+.contact-form {
+  max-width: 580px;
+  margin: 0 auto 35px;
+  text-align: left;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  font: 0.58rem var(--mono);
+  letter-spacing: 0.1em;
+  color: #987648;
+  font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea {
+  background: #f7f4ed;
+  border: 1px solid #c8c0b4;
+  padding: 12px 14px;
+  font: 0.85rem var(--sans);
+  color: var(--ink);
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  border-radius: 2px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(201, 166, 107, 0.2);
+}
+
+.form-actions {
+  display: flex;
+  gap: 14px;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.form-status {
+  margin-top: 14px;
+  font: 0.78rem var(--mono);
+  display: none;
+}
+
+.form-status.success {
+  display: block;
+  color: #27813a;
+}
+
+.form-status.error {
+  display: block;
+  color: #b92e2e;
 }
 
 .dark-button {
@@ -850,7 +918,7 @@ h2 {
   gap: 20px;
   text-align: left;
   border-top: 1px solid #c8c0b4;
-  margin-top: 45px;
+  margin-top: 35px;
   padding-top: 24px;
 }
 
@@ -1012,15 +1080,43 @@ footer {
   margin-bottom: 6px;
 }
 
-/* ========== SCROLL REVEAL ANIMATIONS (SAFE FALLBACK) ========== */
-/* Defaults to visible immediately so text never stays missing! */
+.iso-metrics {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.iso-badge {
+  background: var(--ink);
+  border: 1px solid #2a2d31;
+  padding: 10px 12px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.iso-badge b {
+  color: var(--gold);
+  font-size: 0.8rem;
+  font-family: var(--serif);
+}
+
+.iso-badge span {
+  color: var(--muted);
+  font-size: 0.68rem;
+  font-family: var(--mono);
+}
+
+/* ========== SCROLL REVEAL ANIMATIONS ========== */
 .reveal {
   opacity: 1;
   transform: translateY(0);
   transition: opacity 0.7s ease, transform 0.7s ease;
 }
 
-/* Interactive terminal shell */
+/* ========== TERMINAL ========== */
 .hero-terminal {
   margin-top: 24px;
   background: #0a0b0d;
@@ -1177,9 +1273,11 @@ footer {
 
   .two-col,
   .music-grid,
-  .project {
+  .project,
+  .form-row,
+  .iso-metrics {
     grid-template-columns: 1fr;
-    gap: 25px;
+    gap: 16px;
   }
 
   .skills {
@@ -1273,40 +1371,5 @@ footer {
   *::before,
   *::after {
     transition: none !important;
-  }
-}
-/* ISO 9126 Badge Layout inside Modal */
-.iso-metrics {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
-  margin-top: 12px;
-}
-
-.iso-badge {
-  background: var(--ink);
-  border: 1px solid #2a2d31;
-  padding: 10px 12px;
-  border-radius: 4px;
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.iso-badge b {
-  color: var(--gold);
-  font-size: 0.8rem;
-  font-family: var(--serif);
-}
-
-.iso-badge span {
-  color: var(--muted);
-  font-size: 0.68rem;
-  font-family: var(--mono);
-}
-
-@media (max-width: 500px) {
-  .iso-metrics {
-    grid-template-columns: 1fr;
   }
 }

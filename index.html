@@ -16,14 +16,14 @@
   <meta property="og:url" content="https://donutdisturb-jpg.github.io">
   <meta property="og:title" content="Marc Lyndon C. Ramos — Portfolio">
   <meta property="og:description" content="IT Student, Developer & Musician based in Batangas, Philippines. Building technology with purpose and creativity with discipline.">
-  <meta property="og:image" content="https://donutdisturb-jpg.github.io/assets/og-image.jpg">
+  <meta property="og:image" content="https://donutdisturb-jpg.github.io/assets/profile.jpg">
 
   <!-- Twitter / X Card Preview -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:url" content="https://donutdisturb-jpg.github.io">
   <meta name="twitter:title" content="Marc Lyndon C. Ramos — Portfolio">
   <meta name="twitter:description" content="IT Student, Developer & Musician based in Batangas, Philippines. Building technology with purpose and creativity with discipline.">
-  <meta name="twitter:image" content="https://donutdisturb-jpg.github.io/assets/og-image.jpg">
+  <meta name="twitter:image" content="https://donutdisturb-jpg.github.io/assets/profile.jpg">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -324,12 +324,31 @@
       <div class="wrap contact-panel">
         <p class="eyebrow">06 — LET’S CONNECT</p>
         <h2 class="reveal">Have an opportunity<br>or a project in mind?</h2>
-        <p>I’m open to meaningful opportunities to learn, contribute, and collaborate.</p>
+        <p>Send a direct message below, or download my résumé for your review.</p>
         
-        <div class="actions" style="justify-content: center; margin-top: 0;">
-          <a class="button dark-button" href="mailto:donutdisturbq1@gmail.com">Email me ↗</a>
-          <a class="button dark-button" href="assets/Marc-Lyndon-Ramos-Resume.pdf" target="_blank" rel="noopener">Download Résumé ↗</a>
-        </div>
+        <!-- Interactive Formspree Contact Form -->
+        <form id="contact-form" class="contact-form" action="https://formspree.io/f/mknlqzoq" method="POST">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="form-name">YOUR NAME</label>
+              <input type="text" id="form-name" name="name" placeholder="e.g. Jane Doe" required>
+            </div>
+            <div class="form-group">
+              <label for="form-email">YOUR EMAIL</label>
+              <input type="email" id="form-email" name="email" placeholder="e.g. jane@example.com" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="form-message">YOUR MESSAGE</label>
+            <textarea id="form-message" name="message" rows="4" placeholder="Write your message here..." required></textarea>
+          </div>
+          
+          <div class="form-actions">
+            <button type="submit" id="form-submit-btn" class="button dark-button">Send Message ↗</button>
+            <a class="button gold" href="assets/Marc-Lyndon-Ramos-Resume.pdf" target="_blank" rel="noopener">Download Résumé ↗</a>
+          </div>
+          <p id="form-status" class="form-status"></p>
+        </form>
         
         <div class="contact-grid">
           <div>

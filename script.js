@@ -63,6 +63,53 @@ if (playBtn && celloAudio) {
   });
 }
 
+// ========== FORMSPREE AJAX CONTACT FORM ==========
+const contactForm = document.getElementById('contact-form');
+const formStatus = document.getElementById('form-status');
+const formSubmitBtn = document.getElementById('form-submit-btn');
+
+if (contactForm && formStatus && formSubmitBtn) {
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const data = new FormData(contactForm);
+
+    formSubmitBtn.disabled = true;
+    formSubmitBtn.textContent = 'Sending...';
+    formStatus.className = 'form-status';
+    formStatus.style.display = 'none';
+
+    try {
+      const response = await fetch(contactForm.action, {
+        method: contactForm.method,
+        body: data,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        formStatus.textContent = "✓ Thank you! Your message has been sent successfully.";
+        formStatus.className = 'form-status success';
+        contactForm.reset();
+      } else {
+        const result = await response.json();
+        if (result && result.errors) {
+          formStatus.textContent = result.errors.map(err => err.message).join(", ");
+        } else {
+          formStatus.textContent = "Oops! There was a problem submitting your form.";
+        }
+        formStatus.className = 'form-status error';
+      }
+    } catch (error) {
+      formStatus.textContent = "Oops! Network error. Please try again later or email directly.";
+      formStatus.className = 'form-status error';
+    } finally {
+      formSubmitBtn.disabled = false;
+      formSubmitBtn.textContent = 'Send Message ↗';
+    }
+  });
+}
+
 // ========== BUTIK MODAL CONTROLLER ==========
 const openModalBtn = document.getElementById('open-butik-modal');
 const closeModalBtn = document.getElementById('close-butik-modal');
